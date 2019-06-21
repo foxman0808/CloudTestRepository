@@ -1,0 +1,18 @@
+server:
+  port: 8011
+userInfo:
+    userServiceUrl: http://localhost:8012/UserInfo/ 
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+  h2:
+    console:
+      path: /h2-console              
+      enabled: true                   
+      settings:
+        web-allow-others: true      
+  datasource:
+    platform: h2                     
+    schema: classpath:schema.sql      
+    data: classpath:data.sql       

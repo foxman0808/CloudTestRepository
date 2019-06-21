@@ -1,0 +1,1 @@
+CREATE table IF NOT EXISTS tickets(id int primary key auto_increment, movie_name varchar(30), seat_no varchar(30));
