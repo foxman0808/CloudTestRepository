@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.user.UserInfo;
+import com.movie.pojo.Ticket;
+import com.user.pojo.UserInfo;
 
 @RestController
 @EnableAutoConfiguration
@@ -39,8 +40,8 @@ public class TicketController {
 		SqlParameterSource param = new MapSqlParameterSource().addValue("id", ticketId);
 		Ticket result = jdbcTemplate.queryForObject(sql, param,
 				(rs, rowNum) -> new Ticket(rs.getInt("id"), rs.getString("movie_name"), rs.getString("seat_no")));
-		String ticket = "ãƒãƒƒã‚±ãƒˆã€€æ˜ ç”»åï¼š" + result.getMovieName() + ", å¸­ç•ªå·ï¼š" + result.getSeatNo();
-		String user = "ãƒ¦ãƒ¼ã‚¶ãƒ¼ï¼š" + userInfo.getName() + ", æ®‹é«˜ï¼š" + userInfo.getBalance();
+		String ticket = "ƒ`ƒbƒPƒg@‰f‰æ–¼F" + result.getMovieName() + ", È”Ô†F" + result.getSeatNo();
+		String user = "ƒ†[ƒU[F" + userInfo.getName() + ", c‚F" + userInfo.getBalance();
 		return ticket + "\r\n" + user;
 	}
 }
